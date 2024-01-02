@@ -26,11 +26,11 @@ const App = () => {
     // Formatiranje podataka za grafikon samo ako postoje podaci
     if (data.length > 0) {
       const chartLabels = data.map((entry) => {
-        const date = new Date(entry.dt * 1000);
+        const date = new Date();
         return date.toLocaleDateString('en-GB'); // Formatiraj datum u "dd/MM/yy"
       });
 
-      const chartTemperatureData = data.map((entry) => entry.main.temp+ Math.random()*2);
+      const chartTemperatureData = data.map((entry) => entry.temperatura);
 
       setChartData({
         labels: chartLabels,
